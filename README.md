@@ -1,3 +1,88 @@
+# Daily Saying KR
+
+Insert a random Korean saying into your current note in Obsidian.
+
+## Features
+
+- Insert a random Korean saying from the command palette
+- Replace the `{{daily-saying-kr}}` template placeholder automatically
+- Work fully offline with a local saying dataset
+- Support both desktop and mobile Obsidian
+
+## Usage
+
+Run **Insert random daily saying** from the command palette.
+
+You can also use the template placeholder below:
+
+```md
+{{daily-saying-kr}}
+```
+
+When a note containing the placeholder is opened, the plugin automatically replaces it with a random saying.
+
+## Installation
+
+Until the plugin is available in the Obsidian Community directory, you can install it manually from a GitHub release.
+
+1. Create `.obsidian/plugins/daily-saying-kr/` inside your vault.
+2. Download `main.js` and `manifest.json` from the latest release.
+3. Place both files in that directory.
+4. Enable **Daily Saying KR** in Obsidian's Community plugins settings.
+
+## Development
+
+```bash
+npm install
+npm run dev
+```
+
+Set the local vault path before starting development:
+
+```bash
+export OBSIDIAN_VAULT_PATH="$HOME/Documents/Obsidian/Main"
+```
+
+`npm run dev` stays active in watch mode.
+
+- It builds the plugin once and then waits for changes.
+- When files under `src/` change, it rebuilds automatically.
+- After a successful build, it copies `main.js`, `manifest.json`, and `versions.json` into `.obsidian/plugins/daily-saying-kr/` in the configured vault.
+
+```text
+Deployed daily-saying-kr to:
+  /Users/john/Documents/Obsidian/Main/.obsidian/plugins/daily-saying-kr
+[watch] build finished, watching for changes...
+```
+
+This state is expected. Press `Ctrl + C` to stop the watcher.
+
+> Obsidian does not automatically reload plugins after build artifacts change. Reload Obsidian or re-enable the plugin to test updated code.
+
+## Release build
+
+```bash
+npm run build
+```
+
+Release artifacts are generated at the repository root:
+
+- `main.js`
+- `manifest.json`
+- `versions.json`
+
+For Obsidian releases, attach `main.js`, `manifest.json`, and `styles.css` if the plugin uses one.
+
+## Author
+
+Rando209
+
+## License
+
+MIT
+
+---
+
 # 오늘의 한마디
 
 매일 하나씩 읽을 수 있는 한국어 한 줄 문구를 Markdown으로 삽입하는 Obsidian 플러그인입니다.
