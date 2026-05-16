@@ -1,0 +1,20 @@
+{
+  "name": "daily-saying-kr",
+  "version": "1.0.0",
+  "description": "매일 하나씩 읽을 수 있는 한국어 한 줄 문구를 편집기에 삽입합니다.",
+  "main": "main.js",
+  "scripts": {
+    "dev": "node esbuild.config.mjs",
+    "build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production"
+  },
+  "keywords": ["obsidian", "plugin", "korean"],
+  "author": "Rando209",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^22.15.18",
+    "esbuild": "^0.25.4",
+    "obsidian": "latest",
+    "tslib": "^2.8.1",
+    "typescript": "^5.8.3"
+  }
+}

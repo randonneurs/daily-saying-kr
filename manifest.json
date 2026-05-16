@@ -1,0 +1,9 @@
+{
+  "id": "daily-saying-kr",
+  "name": "오늘의 한마디",
+  "version": "1.0.0",
+  "minAppVersion": "1.0.0",
+  "description": "매일 하나씩 읽을 수 있는 한국어 한 줄 문구를 편집기에 삽입합니다.",
+  "author": "Rando209",
+  "isDesktopOnly": false
+}
