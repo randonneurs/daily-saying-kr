@@ -1,6 +1,6 @@
 {
   "name": "daily-saying-kr",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Insert a random Korean saying into the current note.",
   "main": "main.js",
   "scripts": {

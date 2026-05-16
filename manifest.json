@@ -1,7 +1,7 @@
 {
   "id": "daily-saying-kr",
   "name": "Daily Saying KR",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "minAppVersion": "1.0.0",
   "description": "Insert a random Korean saying into the current note.",
   "author": "Rando209",
