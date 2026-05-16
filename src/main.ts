@@ -1,4 +1,5 @@
 import { Editor, Plugin, TFile } from "obsidian";
+import { pickRandomItems } from "./quote-selection";
 import { KOREAN_QUOTES } from "./quotes.ko";
 
 type DailySaying = string;
@@ -6,7 +7,7 @@ type DailySaying = string;
 const QUOTE_FORMAT = `>[!quote] Daily Saying
 > {content}`;
 const QUOTE_TEMPLATE_PLACEHOLDER = "{{daily-saying-kr}}";
-const PLACEHOLDER_INTERVAL_SECONDS = 5;
+const PLACEHOLDER_INTERVAL_SECONDS = 2;
 
 export default class DailySayingPlugin extends Plugin {
   private isUpdatingPlaceholder = false;
@@ -49,9 +50,7 @@ export default class DailySayingPlugin extends Plugin {
         return;
       }
 
-      const nextContent = currentContent
-        .split(QUOTE_TEMPLATE_PLACEHOLDER)
-        .join(this.formatQuote(this.pickRandomQuote()));
+      const nextContent = this.replaceQuotePlaceholders(currentContent);
 
       await this.app.vault.modify(file, nextContent);
     } finally {
@@ -65,6 +64,20 @@ export default class DailySayingPlugin extends Plugin {
 
   private pickRandomQuote(): DailySaying {
     return KOREAN_QUOTES[Math.floor(Math.random() * KOREAN_QUOTES.length)];
+  }
+
+  private replaceQuotePlaceholders(content: string): string {
+    const parts = content.split(QUOTE_TEMPLATE_PLACEHOLDER);
+    const placeholderCount = parts.length - 1;
+    const quotes = pickRandomItems(KOREAN_QUOTES, placeholderCount);
+
+    return parts.reduce((result, part, index) => {
+      if (index === 0) {
+        return part;
+      }
+
+      return `${result}${this.formatQuote(quotes[index - 1])}${part}`;
+    }, "");
   }
 
   private async loadTemplateFolder(): Promise<void> {
