@@ -83,7 +83,7 @@ MIT
 
 ---
 
-# 오늘의 한마디
+# Daily Saying KR 한국어 안내
 
 매일 하나씩 읽을 수 있는 한국어 한 줄 문구를 Markdown으로 삽입하는 Obsidian 플러그인입니다.
 
@@ -99,7 +99,7 @@ MIT
 
 ## 사용법
 
-명령 팔레트에서 **무작위 오늘의 한마디 삽입** 명령을 실행할 수 있습니다.
+명령 팔레트에서 **Insert random daily saying** 명령을 실행할 수 있습니다.
 
 템플릿에서는 아래 플레이스홀더를 사용할 수 있습니다.
 
@@ -115,7 +115,7 @@ Obsidian 커뮤니티 플러그인 등록 전에는 GitHub Release에서 `main.j
 
 1. vault의 `.obsidian/plugins/daily-saying-kr/` 디렉터리를 만듭니다.
 2. 릴리스 자산의 `main.js`, `manifest.json`을 해당 디렉터리에 넣습니다.
-3. Obsidian 설정에서 커뮤니티 플러그인을 활성화한 뒤 **오늘의 한마디**를 켭니다.
+3. Obsidian 설정에서 커뮤니티 플러그인을 활성화한 뒤 **Daily Saying KR**를 켭니다.
 
 ## 개발 환경
 

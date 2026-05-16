@@ -3,7 +3,7 @@ import { KOREAN_QUOTES } from "./quotes.ko";
 
 type DailySaying = string;
 
-const QUOTE_FORMAT = `>[!quote] 오늘의 한마디
+const QUOTE_FORMAT = `>[!quote] Daily Saying
 > {content}`;
 const QUOTE_TEMPLATE_PLACEHOLDER = "{{daily-saying-kr}}";
 const PLACEHOLDER_INTERVAL_SECONDS = 5;
@@ -24,7 +24,7 @@ export default class DailySayingPlugin extends Plugin {
 
     this.addCommand({
       id: "daily-saying-random",
-      name: "무작위 오늘의 한마디 삽입",
+      name: "Insert random daily saying",
       editorCallback: (editor: Editor) => {
         editor.replaceSelection(this.formatQuote(this.pickRandomQuote()));
       },

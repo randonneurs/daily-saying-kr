@@ -1,7 +1,7 @@
 {
   "name": "daily-saying-kr",
-  "version": "1.0.0",
-  "description": "매일 하나씩 읽을 수 있는 한국어 한 줄 문구를 편집기에 삽입합니다.",
+  "version": "1.0.1",
+  "description": "Insert a random Korean saying into the current note.",
   "main": "main.js",
   "scripts": {
     "dev": "node esbuild.config.mjs",
